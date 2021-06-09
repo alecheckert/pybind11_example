@@ -1,5 +1,5 @@
 # pybind11_example
-An \"{u}ber simple example that uses pybind11 to wrap a simple softmax function, mostly for my own future reference
+An example that uses pybind11 to wrap a simple softmax function, mostly for my own future reference
 
 ## Build with conda
 ```
