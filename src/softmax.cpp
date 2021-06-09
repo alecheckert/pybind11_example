@@ -74,3 +74,8 @@ py::array_t<float> double_2d_float(py::array_t<float> arr) {
     result.resize({X, Y});
     return result;
 }
+
+bool string_says_hello(const std::string &str) {
+    bool result = !str.compare("hello");
+    return result;
+}
