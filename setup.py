@@ -5,7 +5,7 @@ from pybind11.setup_helpers import Pybind11Extension, build_ext
 
 ext_modules = [
     Pybind11Extension(
-        "softmax",
+        "_softmax",
         sorted(glob(os.path.join("src", "*.cpp"))),
         include_dirs=["include"],
     ),

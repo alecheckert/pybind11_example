@@ -1,5 +1,6 @@
 # pybind11_example
-An example that uses pybind11 to wrap a simple softmax function, mostly for my own future reference
+An example that uses pybind11 to make a simple mixed Python/C++ project called `softmax`, mostly
+for my own future reference. Plays with a few options in pybind11.
 
 ## Build with conda
 ```
