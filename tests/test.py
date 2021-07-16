@@ -2,7 +2,14 @@ from unittest import TestCase
 import json
 import numpy as np
 from numpy.testing import assert_allclose
-from softmax import softmax, double_2d, double_2d_float, string_says_hello, echo_args
+from softmax import (
+    softmax,
+    double_2d,
+    double_2d_float,
+    string_says_hello,
+    echo_args,
+    echo_kwargs
+)
 
 class TestSoftmax(TestCase):
     def test_softmax(self):
@@ -26,7 +33,16 @@ class TestSoftmax(TestCase):
         assert not string_says_hello("not_hello")
 
     def test_echo_args(self):
+        """ Not really a test, more a demo """
+        print("testing _softmax.echo_args...")
         Ny = Nx = 20
         params = {'window_size': 21, 'sigma': 2.1, 'unrecognized_arg': 5}
         jstr = json.dumps(params)
         assert echo_args(jstr, Ny, Nx) is None
+
+    def test_echo_kwargs(self):
+        """ Not really a test, more a demo """
+        print("testing _softmax.echo_kwargs...")
+        Ny = Nx = 20
+        params = {'window_size': 21, 'sigma': 2.1, 'unrecognized_arg': 5}
+        echo_kwargs(Ny, Nx, **params)
