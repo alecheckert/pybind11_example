@@ -36,7 +36,7 @@ class TestSoftmax(TestCase):
         """ Not really a test, more a demo """
         print("testing _softmax.echo_args...")
         Ny = Nx = 20
-        params = {'window_size': 21, 'sigma': 2.1, 'unrecognized_arg': 5}
+        params = {'window_size': 21, 'sigma': 2.1, 'unrecognized_arg': 5, 'method': 'dag'}
         jstr = json.dumps(params)
         assert echo_args(jstr, Ny, Nx) is None
 
@@ -44,5 +44,5 @@ class TestSoftmax(TestCase):
         """ Not really a test, more a demo """
         print("testing _softmax.echo_kwargs...")
         Ny = Nx = 20
-        params = {'window_size': 21, 'sigma': 2.1, 'unrecognized_arg': 5}
+        params = {'window_size': 21, 'sigma': 2.1, 'unrecognized_arg': 5, 'method': 'dag'}
         echo_kwargs(Ny, Nx, **params)

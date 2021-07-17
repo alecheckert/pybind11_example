@@ -15,6 +15,9 @@ namespace py = pybind11;
 template <typename T>
 int get_json_item(std::string json, std::string key, T* value);
 
+/* get_json_str: get a JSON string */
+int get_json_str(std::string json, std::string key, std::string& value);
+
 /* Params: encapsulates a set of defined possible arguments to a Python
  * function. */
 struct Params {
@@ -26,6 +29,7 @@ struct Params {
     float sigma = 1.5;
     float damp = 0.3;
     int max_iter = 20;
+    std::string method = "None";
 
     // Pointers to attribute values, keyed by parameter name
     std::map<std::string,int*> int_attribs = {
@@ -35,6 +39,9 @@ struct Params {
     std::map<std::string,float*> float_attribs = {
         {std::string("sigma"), &sigma},
         {std::string("damp"), &damp}
+    };
+    std::map<std::string,std::string> str_attribs = {
+        {std::string("method"), method}
     };
 
     // Constructor from a JSON string

@@ -18,6 +18,12 @@ void echo_args(const std::string &json, int Ny, int Nx) {
     for (itrf = P.float_attribs.begin(); itrf != P.float_attribs.end(); itrf++) 
         std::cout << itrf->first << ": " << *itrf->second << std::endl;
 
+    // Show all string-valued parameters
+    std::cout << "String-valued parameters:\n";
+    std::map<std::string,std::string>::iterator itrs;
+    for (itrs = P.str_attribs.begin(); itrs != P.str_attribs.end(); itrs++) 
+        std::cout << itrs->first << ": " << itrs->second << std::endl;
+
     // Show parameters not in these maps
     std::cout << "Other parameters:\n";
     std::cout << "Ny: " << P.Ny << std::endl;

@@ -20,6 +20,11 @@ Params::Params(std::string params_json, int Ny, int Nx) : Ny(Ny), Nx(Nx) {
     for (itrf = float_attribs.begin(); itrf != float_attribs.end(); itrf++)
         get_json_item<float>(params_json, itrf->first, itrf->second);
 
+    // Grab all passed string-valued parameters
+    std::map<std::string,std::string>::iterator itrs;
+    for (itrs = str_attribs.begin(); itrs != str_attribs.end(); itrs++) 
+        get_json_str(params_json, itrs->first, itrs->second);
+
     // Non user-supplied parameters
     n_pixels = Ny * Nx;
 }
