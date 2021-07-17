@@ -1,6 +1,6 @@
 import os
 from glob import glob 
-from setuptools import setup
+from setuptools import setup, find_packages
 from pybind11.setup_helpers import Pybind11Extension, build_ext
 
 ext_modules = [
@@ -16,5 +16,6 @@ setup(
     name="softmax",
     version="1.0",
     cmdclass={"build_ext": build_ext},
-    ext_modules=ext_modules
+    ext_modules=ext_modules,
+    packages=find_packages(),
 )
