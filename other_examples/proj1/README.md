@@ -3,18 +3,20 @@ then links a pybind11-bound library to this library.
 
 The different components have the following names:
     - The static pure C++ library is called proj1 (libproj1.a)
-    - The pybind11 module is called _glacial
-    - The Python module is called glacial (it imports everything
-        from _glacial into its namespace)
+    - The pybind11 module is called \_pyproj1
+    - The Python module is called pyproj1 (it imports everything
+        from \_pyproj1 into its namespace)
 
 To build:
+```
     mkdir build; cd build
 
-    # Build the static library "proj1"
+    # Build the static library libproj1.a
     cmake ..
     cmake --build .
     
-    # Build the _glacial, glacial packages
+    # Build the _pyproj1, pyproj1 packages
     cd ..
     python setup.py install
+```
 
