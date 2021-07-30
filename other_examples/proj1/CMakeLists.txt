@@ -1,0 +1,6 @@
+cmake_minimum_required(VERSION 3.8)
+project(proj1 LANGUAGES CXX)
+include_directories(include)
+set(SOURCES src/add.cpp src/multiply.cpp)
+add_library(proj1 STATIC ${SOURCES})
+install(TARGETS proj1 DESTINATION .)
